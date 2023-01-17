@@ -8,6 +8,7 @@ Execute the `load` function of denops-lazy.nvim in the `config` property of lazy
 
 ```lua
 return {
+  { 'vim-denops/denops.vim', event = { 'VeryLazy' } },
   {
     'yuki-yano/fuzzy-motion.vim',
     dependencies = {
