@@ -7,6 +7,16 @@ Plugin for lazy load of [denops.vim](https://github.com/vim-denops/denops.vim) p
 Execute the `load` function of denops-lazy.nvim in the `config` property of lazy.nvim.
 
 ```lua
+require('denops-lazy').setup({
+  -- setting default options
+  -- wait_load = true,
+  -- wait_server = true,
+  -- wait_server_delay = 10,
+  -- wait_server_retry_limit = 100,
+})
+```
+
+```lua
 return {
   { 'vim-denops/denops.vim', event = { 'VeryLazy' } },
   {
@@ -24,7 +34,7 @@ return {
 
 ## Option
 
-The second argument of load specifies options for loading.
+The `setup` function argument or `load` function second argument of load specifies options for loading.
 
 ### `wait_load`
 

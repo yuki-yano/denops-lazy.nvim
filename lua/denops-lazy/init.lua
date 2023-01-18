@@ -15,6 +15,11 @@ local default_opts = {
 }
 
 ---@param opts denops-lazy.Opts
+M.setup = function(opts)
+  default_opts = vim.tbl_deep_extend('force', default_opts, opts or {})
+end
+
+---@param opts denops-lazy.Opts
 local function wait_server(opts)
   local once = false
   for _ = 1, opts.wait_server_retry_limit do
