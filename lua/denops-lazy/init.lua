@@ -69,12 +69,12 @@ M.load = function(plugin_name, opts)
   end
 
   for _, denops_plugin in ipairs(denops_plugins) do
-    denops_plugin = vim.fn.fnamemodify(denops_plugin, ':h:t')
+    local denops_plugin_name = vim.fn.fnamemodify(denops_plugin, ':h:t')
 
-    if vim.fn['denops#plugin#is_loaded'](denops_plugin) == 0 then
-      pcall(vim.fn['denops#plugin#register'], denops_plugin, { mode = 'skip' })
+    if vim.fn['denops#plugin#is_loaded'](denops_plugin_name) == 0 then
+      pcall(vim.fn['denops#plugin#load'], denops_plugin_name, denops_plugin)
       if opts.wait_load then
-        vim.fn['denops#plugin#wait'](denops_plugin)
+        vim.fn['denops#plugin#wait'](denops_plugin_name)
       end
     end
   end
