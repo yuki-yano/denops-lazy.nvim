@@ -36,7 +36,7 @@ local function wait_server(opts)
 end
 
 ---@param plugin_name string
----@param opts denops-lazy.Opts
+---@param opts? denops-lazy.Opts
 M.load = function(plugin_name, opts)
   require('lazy').load({ plugins = plugin_name })
 
