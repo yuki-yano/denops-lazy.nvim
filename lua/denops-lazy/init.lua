@@ -64,7 +64,7 @@ M.load = function(plugin_name, opts)
     end
   end
 
-  if not vim.fn['denops#server#status']() == 'running' then
+  if vim.fn['denops#server#status']() ~= 'running' then
     return
   end
 
